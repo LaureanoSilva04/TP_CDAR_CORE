@@ -53,7 +53,7 @@ node n2 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	cmdup=('ifconfig eth0 201.0.1.2/24 up', 'ifconfig eth1 192.168.10.1/24 up', 'ip route add default via 201.0.1.1 dev eth0', 'ip route add 10.2.0.0/19 via 201.0.1.1 dev eth0', )
+	cmdup=('ifconfig eth0 201.0.1.2/24 up', 'ifconfig eth1 192.168.10.1/24 up', 'ip route add default via 201.0.1.1 dev eth0', 'ip route add 10.2.0.0/19 via 201.0.1.1 dev eth0', 'iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE', )
 	}
     }
     services {IPForward UserDefined}
