@@ -183,7 +183,7 @@ node n6 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	cmdup=('ifconfig eth0 10.2.2.3/23 up', 'ifconfig eth1 10.2.4.225/30 up', 'ifconfig eth2 10.2.4.129/26 up', 'ifconfig eth3 10.2.4.193/27 up', 'ip route add 10.2.4.0/25 via 10.2.4.226 dev eth1', 'ip route add default via 10.2.2.2 dev eth0', 'ip route add 10.2.5.0/24 via 10.2.2.4 dev eth0', )
+	cmdup=('ifconfig eth0 10.2.2.3/23 up', 'ifconfig eth1 10.2.4.225/30 up', 'ifconfig eth2 10.2.4.129/26 up', 'ifconfig eth3 10.2.4.193/27 up', 'ip route add 10.2.4.0/25 via 10.2.4.226 dev eth1', 'ip route add 10.2.5.0/24 via 10.2.2.4 dev eth0', 'ip route add default via 10.2.2.1 dev eth0', 'ip route add 10.2.0.0/23 via 10.2.2.2 dev eth0', )
 	}
     }
     services {IPForward UserDefined}
@@ -223,7 +223,7 @@ node n7 {
 	custom-config-id service:UserDefined
 	custom-command UserDefined
 	config {
-	cmdup=('ifconfig eth0 10.2.2.4/23 up', 'ifconfig eth1 10.2.5.1/25 up', 'ifconfig eth2 10.2.5.193/28 up', 'ifconfig eth3 10.2.5.129/26 up', 'ip route add default via 10.2.2.2 dev eth0', 'ip route add 10.2.4.0/24 via 10.2.2.3 dev eth0', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -d 10.2.5.0/24 -j ACCEPT', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -d 10.2.0.0.23 -j ACCEPT', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -j REJECT', )
+	cmdup=('ifconfig eth0 10.2.2.4/23 up', 'ifconfig eth1 10.2.5.1/25 up', 'ifconfig eth2 10.2.5.193/28 up', 'ifconfig eth3 10.2.5.129/26 up', 'ip route add 10.2.4.0/24 via 10.2.2.3 dev eth0', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -d 10.2.5.0/24 -j ACCEPT', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -d 10.2.0.0.23 -j ACCEPT', 'iptables -t filter -A FORWARD -s 10.2.5.192/28 -j REJECT', 'ip route add default via 10.2.2.1 dev eth0', 'ip route add 10.2.0.0/23 via 10.2.2.2 dev eth0', )
 	}
     }
     services {IPForward UserDefined}
